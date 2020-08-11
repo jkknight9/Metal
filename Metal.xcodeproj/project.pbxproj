@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		E9103EA324D461F700039716 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103EA224D461F700039716 /* AppDelegate.swift */; };
-		E9103EA524D461F700039716 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103EA424D461F700039716 /* SceneDelegate.swift */; };
 		E9103EA724D461F700039716 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103EA624D461F700039716 /* ViewController.swift */; };
 		E9103EAA24D461F700039716 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9103EA824D461F700039716 /* Main.storyboard */; };
 		E9103EAC24D461F700039716 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9103EAB24D461F700039716 /* Assets.xcassets */; };
 		E9103EAF24D461F700039716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9103EAD24D461F700039716 /* LaunchScreen.storyboard */; };
 		E9103EBA24D461F800039716 /* MetalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103EB924D461F800039716 /* MetalTests.swift */; };
 		E9103EC524D461F800039716 /* MetalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103EC424D461F800039716 /* MetalUITests.swift */; };
+		E9103ED324D4633900039716 /* Metal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103ED224D4633900039716 /* Metal.swift */; };
+		E9103ED524D4712500039716 /* MetalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103ED424D4712500039716 /* MetalController.swift */; };
+		E9103ED724D4771A00039716 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103ED624D4771A00039716 /* TableViewCell.swift */; };
+		E991E18624DB7500008F9E68 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E18524DB7500008F9E68 /* Customer.swift */; };
+		E991E18724DB752C008F9E68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103EA424D461F700039716 /* SceneDelegate.swift */; };
+		E991E18924DB771E008F9E68 /* CustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E18824DB771E008F9E68 /* CustomerController.swift */; };
+		E991E18C24DB83AE008F9E68 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E18A24DB83AE008F9E68 /* CustomerViewController.swift */; };
+		E991E18F24DB83F1008F9E68 /* CustomerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E18E24DB83F1008F9E68 /* CustomerCollectionViewCell.swift */; };
+		E991E19124DC9B20008F9E68 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E19024DC9B20008F9E68 /* MainViewController.swift */; };
+		E991E19524E30167008F9E68 /* ClosedTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E19424E30167008F9E68 /* ClosedTicketsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		E9103EC024D461F800039716 /* MetalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9103EC424D461F800039716 /* MetalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalUITests.swift; sourceTree = "<group>"; };
 		E9103EC624D461F800039716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9103ED224D4633900039716 /* Metal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metal.swift; sourceTree = "<group>"; };
+		E9103ED424D4712500039716 /* MetalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalController.swift; sourceTree = "<group>"; };
+		E9103ED624D4771A00039716 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		E991E18524DB7500008F9E68 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		E991E18824DB771E008F9E68 /* CustomerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerController.swift; sourceTree = "<group>"; };
+		E991E18A24DB83AE008F9E68 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
+		E991E18E24DB83F1008F9E68 /* CustomerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCollectionViewCell.swift; sourceTree = "<group>"; };
+		E991E19024DC9B20008F9E68 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E991E19424E30167008F9E68 /* ClosedTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedTicketsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +97,7 @@
 		E9103E9624D461F700039716 = {
 			isa = PBXGroup;
 			children = (
+				E9103EB024D461F700039716 /* Info.plist */,
 				E9103EA124D461F700039716 /* Metal */,
 				E9103EB824D461F800039716 /* MetalTests */,
 				E9103EC324D461F800039716 /* MetalUITests */,
@@ -99,13 +118,11 @@
 		E9103EA124D461F700039716 /* Metal */ = {
 			isa = PBXGroup;
 			children = (
-				E9103EA224D461F700039716 /* AppDelegate.swift */,
-				E9103EA424D461F700039716 /* SceneDelegate.swift */,
-				E9103EA624D461F700039716 /* ViewController.swift */,
-				E9103EA824D461F700039716 /* Main.storyboard */,
-				E9103EAB24D461F700039716 /* Assets.xcassets */,
-				E9103EAD24D461F700039716 /* LaunchScreen.storyboard */,
-				E9103EB024D461F700039716 /* Info.plist */,
+				E9426DCC24DB706F0009CE8D /* Development */,
+				E9426DCA24DB703F0009CE8D /* ViewController */,
+				E9426DC924DB70330009CE8D /* Views */,
+				E9426DC824DB70000009CE8D /* Model */,
+				E9426DCB24DB70490009CE8D /* ModelController */,
 			);
 			path = Metal;
 			sourceTree = "<group>";
@@ -126,6 +143,56 @@
 				E9103EC624D461F800039716 /* Info.plist */,
 			);
 			path = MetalUITests;
+			sourceTree = "<group>";
+		};
+		E9426DC824DB70000009CE8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9103ED224D4633900039716 /* Metal.swift */,
+				E991E18524DB7500008F9E68 /* Customer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9426DC924DB70330009CE8D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9103ED624D4771A00039716 /* TableViewCell.swift */,
+				E991E18E24DB83F1008F9E68 /* CustomerCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9426DCA24DB703F0009CE8D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9103EA624D461F700039716 /* ViewController.swift */,
+				E991E19024DC9B20008F9E68 /* MainViewController.swift */,
+				E991E18A24DB83AE008F9E68 /* CustomerViewController.swift */,
+				E991E19424E30167008F9E68 /* ClosedTicketsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E9426DCB24DB70490009CE8D /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				E9103ED424D4712500039716 /* MetalController.swift */,
+				E991E18824DB771E008F9E68 /* CustomerController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		E9426DCC24DB706F0009CE8D /* Development */ = {
+			isa = PBXGroup;
+			children = (
+				E9103EA224D461F700039716 /* AppDelegate.swift */,
+				E9103EA424D461F700039716 /* SceneDelegate.swift */,
+				E9103EA824D461F700039716 /* Main.storyboard */,
+				E9103EAB24D461F700039716 /* Assets.xcassets */,
+				E9103EAD24D461F700039716 /* LaunchScreen.storyboard */,
+			);
+			path = Development;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +326,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E991E18724DB752C008F9E68 /* SceneDelegate.swift in Sources */,
+				E991E19124DC9B20008F9E68 /* MainViewController.swift in Sources */,
+				E991E18924DB771E008F9E68 /* CustomerController.swift in Sources */,
+				E991E18F24DB83F1008F9E68 /* CustomerCollectionViewCell.swift in Sources */,
+				E991E19524E30167008F9E68 /* ClosedTicketsViewController.swift in Sources */,
 				E9103EA724D461F700039716 /* ViewController.swift in Sources */,
+				E991E18C24DB83AE008F9E68 /* CustomerViewController.swift in Sources */,
+				E9103ED324D4633900039716 /* Metal.swift in Sources */,
 				E9103EA324D461F700039716 /* AppDelegate.swift in Sources */,
-				E9103EA524D461F700039716 /* SceneDelegate.swift in Sources */,
+				E991E18624DB7500008F9E68 /* Customer.swift in Sources */,
+				E9103ED724D4771A00039716 /* TableViewCell.swift in Sources */,
+				E9103ED524D4712500039716 /* MetalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2446Y3VTK6;
-				INFOPLIST_FILE = Metal/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2446Y3VTK6;
-				INFOPLIST_FILE = Metal/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
