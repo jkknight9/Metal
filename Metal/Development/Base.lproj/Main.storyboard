@@ -8,6 +8,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Metal Table View Controller-->
+        <scene sceneID="zvj-0J-f4z">
+            <objects>
+                <tableViewController id="lrN-pS-cID" customClass="MetalTableViewController" customModule="Metal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y8V-Kv-Xno">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="metalCell" textLabel="CBK-lF-OSG" detailTextLabel="vr3-03-iHb" rowHeight="119" style="IBUITableViewCellStyleValue1" id="tRq-S6-3p0">
+                                <rect key="frame" x="0.0" y="28" width="896" height="119"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tRq-S6-3p0" id="Jcb-2c-bhx">
+                                    <rect key="frame" x="44" y="0.0" width="808" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CBK-lF-OSG">
+                                            <rect key="frame" x="20" y="50" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vr3-03-iHb">
+                                            <rect key="frame" x="744" y="50" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lrN-pS-cID" id="8Ds-t8-vNc"/>
+                            <outlet property="delegate" destination="lrN-pS-cID" id="0AH-FU-CeK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="iYB-sJ-Mfc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2W-Yv-Ekb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1667" y="-2235"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="PVE-B0-bWh">
             <objects>
@@ -54,7 +99,7 @@
                                                 <state key="normal" title="Quick Ticket"/>
                                                 <connections>
                                                     <action selector="quickTicket:" destination="3b1-6Z-j39" eventType="touchUpInside" id="oIQ-6L-V9f"/>
-                                                    <segue destination="dfG-gc-jhT" kind="show" id="FdZ-Ah-eGn"/>
+                                                    <segue destination="dfG-gc-jhT" kind="show" id="MPw-8j-Oxa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKc-BB-wVd">
@@ -84,11 +129,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d1D-ek-y5Y"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9He-Zw-bFD"/>
+                    <navigationItem key="navigationItem" id="9He-Zw-bFD">
+                        <barButtonItem key="rightBarButtonItem" title="Metals" id="bWv-ts-7AA">
+                            <connections>
+                                <segue destination="lrN-pS-cID" kind="show" id="j0U-cs-Fkt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4D-yA-InL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="-1296"/>
+            <point key="canvasLocation" x="1716" y="-933"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jXR-xJ-UX4">
@@ -207,7 +258,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J9j-nd-zGl">
                                         <rect key="frame" x="0.0" y="0.0" width="111" height="339"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-JC-8Au">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-JC-8Au">
                                                 <rect key="frame" x="0.0" y="0.0" width="111" height="40"/>
                                                 <state key="normal" title="Metal">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -216,7 +267,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="naA-I0-W52"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTC-0R-ext">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTC-0R-ext">
                                                 <rect key="frame" x="0.0" y="50" width="111" height="39.5"/>
                                                 <state key="normal" title="Car Battery">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -225,7 +276,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="1wu-D5-qHZ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgB-KF-zGe">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgB-KF-zGe">
                                                 <rect key="frame" x="0.0" y="99.5" width="111" height="40"/>
                                                 <state key="normal" title="Batteries">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -234,7 +285,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="wdJ-5I-S9t"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1v-kl-geu">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1v-kl-geu">
                                                 <rect key="frame" x="0.0" y="149.5" width="111" height="40"/>
                                                 <state key="normal" title="Brass">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -243,7 +294,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="I9X-R7-r7Y"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWH-U2-ycc">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWH-U2-ycc">
                                                 <rect key="frame" x="0.0" y="199.5" width="111" height="40"/>
                                                 <state key="normal" title="Auto">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -252,7 +303,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="FL2-JJ-MPB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-dP-QfG">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-dP-QfG">
                                                 <rect key="frame" x="0.0" y="249.5" width="111" height="39.5"/>
                                                 <state key="normal" title="ELC Motors">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -261,7 +312,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="Ddo-Vk-WaN"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJe-Lo-W3D">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJe-Lo-W3D">
                                                 <rect key="frame" x="0.0" y="299" width="111" height="40"/>
                                                 <state key="normal" title="Radiators">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -295,7 +346,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="lZB-2l-Xj1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-Qc-cuL">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-Qc-cuL">
                                                 <rect key="frame" x="0.0" y="99.5" width="111" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Hulks">
@@ -305,7 +356,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="uPe-BM-H7f"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCA-nH-qdJ">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCA-nH-qdJ">
                                                 <rect key="frame" x="0.0" y="149.5" width="111" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Engine Block">
@@ -315,7 +366,7 @@
                                                     <action selector="buttonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="uNQ-qb-Duo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-zL-UJX">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-zL-UJX">
                                                 <rect key="frame" x="0.0" y="199.5" width="111" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Computers">
@@ -462,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qF-Mv-Gje" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2176" y="371"/>
+            <point key="canvasLocation" x="1734" y="191"/>
         </scene>
         <!--Held Tickets-->
         <scene sceneID="lIc-E8-Bw6">
@@ -564,7 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0A-Rk-5RU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2771.6517857142858" y="-2430.434782608696"/>
+            <point key="canvasLocation" x="2632" y="-1719"/>
         </scene>
         <!--Closed Tickets View Controller-->
         <scene sceneID="Gcj-Ia-bvu">
@@ -636,8 +687,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WLY-kM-whQ"/>
-        <segue reference="ADY-CY-SVp"/>
+        <segue reference="ybE-0p-TwG"/>
+        <segue reference="MPw-8j-Oxa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="pic" width="498" height="59"/>

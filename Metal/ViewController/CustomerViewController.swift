@@ -20,8 +20,6 @@ class CustomerViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(CustomerController.shared.receipt.count)
-        print(CustomerController.shared.currentCustomers.count)
         return CustomerController.shared.currentCustomers.count
         
     }

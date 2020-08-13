@@ -8,37 +8,30 @@
 
 import UIKit
 
+
 class MainViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     let randomInt = Int.random(in: 1...100000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        MetalController.shared.addMetal(name: "Metal", price: 0.35)
+        MetalController.shared.addMetal(name: "Car Battery", price: 5.00)
+        MetalController.shared.addMetal(name: "Batteries", price: 0.15)
+        MetalController.shared.addMetal(name: "Brass", price: 1.00)
+        MetalController.shared.addMetal(name: "Auto", price: 0.20)
+        MetalController.shared.addMetal(name: "ELC Motors", price: 0.15)
+        MetalController.shared.addMetal(name: "Radiators", price: 0.85)
+        MetalController.shared.addMetal(name: "Hulks", price: 0.45)
+        MetalController.shared.addMetal(name: "Engine Block", price: 0.55)
+        MetalController.shared.addMetal(name: "Computers", price: 0.95)
         
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func quickTicket(_ sender: Any) {
-        let ac = UIAlertController(title: nil, message: "Enter Name:", preferredStyle: .alert)
-        //        let vc = UIImagePickerController()
-        //        vc.sourceType = .camera
-        //        vc.cameraDevice = .front
-        //        vc.delegate = self
-        //        vc.takePicture()
-        let okayAction = UIAlertAction(title: "Okay", style: .default){
-            [weak ac] _ in
-            guard let name = ac?.textFields?[0].text else {return}
-            let upperName = name.uppercased()
-            CustomerController.shared.newCustomer(uuid: String(self.randomInt), title: upperName, image: UIImage(named: "pic")!, receipt: [])
             
-        }
-        ac.addTextField { (textField) in
-            textField.placeholder = "Name"
-            ac.addAction(okayAction)
-            self.present(ac,animated: true)
-        }
     }
-    
+
     /*
      // MARK: - Navigation
      

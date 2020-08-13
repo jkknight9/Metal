@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var button1: UIButton!
@@ -34,8 +34,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var button21: UIButton!
     @IBOutlet weak var totalLabel: UILabel!
     
-    var customer: Customer?
-
+    var currentCustomer: Customer?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if self.currentCustomer == nil {
+        let ac = UIAlertController(title: nil, message: "Enter Name:", preferredStyle: .alert)
+        let vc = UIImagePickerController()
+//        vc.sourceType = .camera
+//        vc.cameraDevice = .front
+//        vc.delegate = self
+//        vc.takePicture()
+        let okayAction = UIAlertAction(title: "Okay", style: .default){
+        [weak ac] _ in
+        guard let name = ac?.textFields?[0].text else {return}
+        let upperName = name.uppercased()
+        let date = Date()
+            self.currentCustomer = Customer(uuid: UUID().uuidString, title: upperName, image: UIImage(named: "pic"), receipt: [], payment: 0.00, isCurrent: true, timeStamp: date)
+        }
+        ac.addTextField { (textField) in
+        textField.placeholder = "Name"
+        ac.addAction(okayAction)
+        }
+        self.present(ac, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -65,7 +88,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.layer.borderWidth = 1
         totalLabel.layer.borderWidth = 1
         updateTotal()
-        print(CustomerController.shared.receipt.count)
         
     }
     
@@ -75,30 +97,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let action = UIAlertAction(title: "Submit", style: .default){
             [weak self, weak ac] _ in
             guard let weight = Float((ac?.textFields?[0].text)!) else {return}
-            if sender.tag == 1 {
-                let metalToBeAdded = Metal(name: "Metal", price: 0.15, weight: weight)
-                self?.submit(metalToBeAdded)
-            }
-            if sender.tag == 2 {
-                let metalToBeAdded = Metal(name: "Car Battery", price: 5.00, weight: weight)
-                self?.submit(metalToBeAdded)
-            }
-            if sender.tag == 3{
-                let metalToBeAdded = Metal(name: "Batteries", price: 0.50, weight: weight)
-                self?.submit(metalToBeAdded)
-            }
-            if sender.tag == 4{
-                let metalToBeAdded = Metal(name: "Brass", price: 1.00, weight: weight)
-                self?.submit(metalToBeAdded)
-            }
-            if sender.tag == 5 {
-                let metalToBeAdded = Metal(name: "Auto", price: 0.35, weight: weight)
-                self?.submit(metalToBeAdded)
-            }
-            if sender.tag == 6{
-                let metalToBeAdded = Metal(name: "ELC Motors", price: 3.00, weight: weight)
-                self?.submit(metalToBeAdded)
-            }
+            for n in MetalController.shared.allMetals.indices {
+                    if sender.tag == n {
+                        let metalToBeAdded = Metal(name: MetalController.shared.allMetals[n].name, price: MetalController.shared.allMetals[n].price, weight: weight)
+                        self?.submit(metalToBeAdded)
+                    }
+                }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in}
         ac.addTextField { (textField) in
@@ -112,42 +116,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func submit(_ metal: Metal) {
-        CustomerController.shared.receipt.insert(metal, at: 0)
+        currentCustomer?.receipt.insert(metal, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         updateTotal()
+        
         return
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CustomerController.shared.receipt.count
+        return  currentCustomer?.receipt.count ?? 0
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "metalCell", for: indexPath) as? TableViewCell else {return UITableViewCell()}
-        let metals = CustomerController.shared.receipt[indexPath.row]
+        let metals = currentCustomer?.receipt[indexPath.row]
         cell.receipt = metals
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            CustomerController.shared.receipt.remove(at: indexPath.row)
+            currentCustomer?.receipt.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             updateTotal()
             
         }
     }
+    
     func updateTotal() {
-        let total = CustomerController.shared.receipt.map { $0.price * $0.weight}.reduce(0, +)
-        let formatter = String(format: "$%.2f", total)
+        let total = currentCustomer?.receipt.map { $0.price * $0.weight}.reduce(0, +)
+        currentCustomer?.payment = total ?? 0
+        let formatter = String(format: "$%.2f", currentCustomer?.payment ?? 0.0)
         totalLabel.text = "Cost: \(formatter)"
-       
     }
     
-    @IBAction func holdTicketButtonTapped(_ sender: UIButton) {
-        
+@IBAction func holdTicketButtonTapped(_ sender: UIButton) {
+        if let customer = currentCustomer {
+            CustomerController.shared.addCustomerToHeld(customer: customer)
+            
+        }
     }
     
     

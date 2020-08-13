@@ -13,18 +13,22 @@ class CustomerController {
    
     
     var currentCustomers: [Customer] = []
-    var receipt: [Metal] = []
+    
     
     static let shared = CustomerController()
     
-    func newCustomer(uuid: String, title: String, image: UIImage, receipt: [Metal] = []) {
-        let newCustomer = Customer(uuid: uuid, title: title, image: image, receipt: receipt)
-        currentCustomers.append(newCustomer)
-        
+//    func newCustomer(uuid: String, title: String, image: UIImage, receipt: [Metal] = []) {
+//        let newCustomer = Customer(uuid: uuid, title: title, image: image, receipt: receipt)
+//        currentCustomers.append(newCustomer)
+//
+//    }
+    
+    func addCustomerToHeld(customer: Customer) {
+        currentCustomers.append(customer)
     }
     
-    func addMetalToCustomer(metal: [Metal]) {
-        receipt.append(contentsOf: metal)
+    func addMetalToCustomer(customer: Customer, metal: [Metal]) {
+        customer.receipt.append(contentsOf: metal)
     }
     
     func updateCustomersReceipt(customer: Customer, receipt: [Metal], payment: Float) {

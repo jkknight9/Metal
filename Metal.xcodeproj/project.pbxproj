@@ -24,6 +24,7 @@
 		E991E18F24DB83F1008F9E68 /* CustomerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E18E24DB83F1008F9E68 /* CustomerCollectionViewCell.swift */; };
 		E991E19124DC9B20008F9E68 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E19024DC9B20008F9E68 /* MainViewController.swift */; };
 		E991E19524E30167008F9E68 /* ClosedTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E19424E30167008F9E68 /* ClosedTicketsViewController.swift */; };
+		E9E102D024E4744000965CA6 /* MetalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E102CF24E4744000965CA6 /* MetalTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E991E18E24DB83F1008F9E68 /* CustomerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E991E19024DC9B20008F9E68 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E991E19424E30167008F9E68 /* ClosedTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedTicketsViewController.swift; sourceTree = "<group>"; };
+		E9E102CF24E4744000965CA6 /* MetalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				E9103EA624D461F700039716 /* ViewController.swift */,
 				E991E19024DC9B20008F9E68 /* MainViewController.swift */,
+				E9E102CF24E4744000965CA6 /* MetalTableViewController.swift */,
 				E991E18A24DB83AE008F9E68 /* CustomerViewController.swift */,
 				E991E19424E30167008F9E68 /* ClosedTicketsViewController.swift */,
 			);
@@ -336,6 +339,7 @@
 				E9103ED324D4633900039716 /* Metal.swift in Sources */,
 				E9103EA324D461F700039716 /* AppDelegate.swift in Sources */,
 				E991E18624DB7500008F9E68 /* Customer.swift in Sources */,
+				E9E102D024E4744000965CA6 /* MetalTableViewController.swift in Sources */,
 				E9103ED724D4771A00039716 /* TableViewCell.swift in Sources */,
 				E9103ED524D4712500039716 /* MetalController.swift in Sources */,
 			);

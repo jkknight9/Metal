@@ -12,22 +12,26 @@ import Foundation
 class MetalController: Equatable {
     
     static func == (lhs: MetalController, rhs: MetalController) -> Bool {
-        return lhs.receipt == rhs.receipt
+        return lhs.allMetals == rhs.allMetals
     }
     
-    var receipt: [Metal] = []
+    var allMetals: [Metal] = []
     
 
     //Source of truth
     static let shared = MetalController()
     
     func remove(metal:Metal) {
-        if let removeMetal = receipt.firstIndex(of: metal) {
-            receipt.remove(at: removeMetal)
+        if let removeMetal = allMetals.firstIndex(of: metal) {
+            allMetals.remove(at: removeMetal)
         }
     }
     func addMetal(name:String, price: Float) {
            let newMetal = Metal(name: name, price: price)
-           receipt.append(newMetal)
+           allMetals.append(newMetal)
        }
+    func updateMetalPrice(metal: Metal, price: Float) {
+        metal.price = price
+    }
+    
 }
