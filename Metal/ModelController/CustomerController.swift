@@ -31,10 +31,12 @@ class CustomerController {
         customer.receipt.append(contentsOf: metal)
     }
     
-    func updateCustomersReceipt(customer: Customer, receipt: [Metal], payment: Float) {
-        customer.receipt = receipt
+    func updateCustomer(_ customer: Customer) {
+        if !self.currentCustomers.contains(customer) {
+        currentCustomers.append(customer)
     }
     
+    }
     func close(_ customer: Customer) {
         customer.isCurrent = false
     }

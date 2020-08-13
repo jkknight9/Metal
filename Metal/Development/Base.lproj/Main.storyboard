@@ -150,10 +150,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a8E-tT-OSx">
-                                <rect key="frame" x="437" y="54" width="410" height="329"/>
+                                <rect key="frame" x="437" y="10" width="410" height="373"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eoO-nq-4KL">
-                                        <rect key="frame" x="0.0" y="0.0" width="410" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="410" height="268"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="metalCell" rowHeight="68" id="hnC-FL-A90" customClass="TableViewCell" customModule="Metal" customModuleProvider="target">
@@ -208,13 +208,13 @@
                                         </prototypes>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost: $0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-0E-hds">
-                                        <rect key="frame" x="0.0" y="229" width="410" height="30"/>
+                                        <rect key="frame" x="0.0" y="273" width="410" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="w6g-bW-Y2H">
-                                        <rect key="frame" x="0.0" y="264" width="410" height="30"/>
+                                        <rect key="frame" x="0.0" y="308" width="410" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN8-Hz-fP7">
                                                 <rect key="frame" x="0.0" y="0.0" width="136.5" height="30"/>
@@ -235,7 +235,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oa8-Lt-Ce5">
-                                        <rect key="frame" x="0.0" y="299" width="410" height="30"/>
+                                        <rect key="frame" x="0.0" y="343" width="410" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFn-GP-GPL">
                                                 <rect key="frame" x="0.0" y="0.0" width="205" height="30"/>
@@ -253,13 +253,13 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uWG-ce-AqO">
-                                <rect key="frame" x="44" y="54" width="363" height="339"/>
+                                <rect key="frame" x="44" y="10" width="363" height="383"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J9j-nd-zGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="111" height="339"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="383"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-JC-8Au">
-                                                <rect key="frame" x="0.0" y="0.0" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="46"/>
                                                 <state key="normal" title="Metal">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -268,7 +268,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTC-0R-ext">
-                                                <rect key="frame" x="0.0" y="50" width="111" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="56" width="111" height="46.5"/>
                                                 <state key="normal" title="Car Battery">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -277,7 +277,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgB-KF-zGe">
-                                                <rect key="frame" x="0.0" y="99.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="112.5" width="111" height="46"/>
                                                 <state key="normal" title="Batteries">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -286,7 +286,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1v-kl-geu">
-                                                <rect key="frame" x="0.0" y="149.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="168.5" width="111" height="46"/>
                                                 <state key="normal" title="Brass">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -295,7 +295,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWH-U2-ycc">
-                                                <rect key="frame" x="0.0" y="199.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="224.5" width="111" height="46"/>
                                                 <state key="normal" title="Auto">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -304,7 +304,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-dP-QfG">
-                                                <rect key="frame" x="0.0" y="249.5" width="111" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="280.5" width="111" height="46.5"/>
                                                 <state key="normal" title="ELC Motors">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -313,7 +313,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJe-Lo-W3D">
-                                                <rect key="frame" x="0.0" y="299" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="337" width="111" height="46"/>
                                                 <state key="normal" title="Radiators">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -324,10 +324,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hc3-Jj-DCc">
-                                        <rect key="frame" x="126" y="0.0" width="111" height="339"/>
+                                        <rect key="frame" x="126" y="0.0" width="111" height="383"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-QV-RJY">
-                                                <rect key="frame" x="0.0" y="0.0" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -337,7 +337,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lD1-M4-vJz">
-                                                <rect key="frame" x="0.0" y="50" width="111" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="56" width="111" height="46.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -347,7 +347,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-Qc-cuL">
-                                                <rect key="frame" x="0.0" y="99.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="112.5" width="111" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Hulks">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -357,7 +357,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCA-nH-qdJ">
-                                                <rect key="frame" x="0.0" y="149.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="168.5" width="111" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Engine Block">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -367,7 +367,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-zL-UJX">
-                                                <rect key="frame" x="0.0" y="199.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="224.5" width="111" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Computers">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -377,7 +377,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6u-U9-gR8">
-                                                <rect key="frame" x="0.0" y="249.5" width="111" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="280.5" width="111" height="46.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Compressors">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -387,7 +387,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-SL-Fg9">
-                                                <rect key="frame" x="0.0" y="299" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="337" width="111" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Automotive">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -399,10 +399,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-YS-9ns">
-                                        <rect key="frame" x="252" y="0.0" width="111" height="339"/>
+                                        <rect key="frame" x="252" y="0.0" width="111" height="383"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-pZ-TVs">
-                                                <rect key="frame" x="0.0" y="0.0" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="46"/>
                                                 <state key="normal" title="Copper">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -411,7 +411,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySo-jY-Ev0">
-                                                <rect key="frame" x="0.0" y="50" width="111" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="56" width="111" height="46.5"/>
                                                 <state key="normal" title="Light Ballast">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -420,7 +420,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVM-3I-fib">
-                                                <rect key="frame" x="0.0" y="99.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="112.5" width="111" height="46"/>
                                                 <state key="normal" title="Radiator Ends">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -429,7 +429,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GN8-oK-gzu">
-                                                <rect key="frame" x="0.0" y="149.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="168.5" width="111" height="46"/>
                                                 <state key="normal" title="EC Wire">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -438,7 +438,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZj-0l-D89">
-                                                <rect key="frame" x="0.0" y="199.5" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="224.5" width="111" height="46"/>
                                                 <state key="normal" title="Hauling Fee">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -447,7 +447,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-Jc-xCd">
-                                                <rect key="frame" x="0.0" y="249.5" width="111" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="280.5" width="111" height="46.5"/>
                                                 <state key="normal" title="Ceiling Fans">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -456,7 +456,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfk-G7-5ct">
-                                                <rect key="frame" x="0.0" y="299" width="111" height="40"/>
+                                                <rect key="frame" x="0.0" y="337" width="111" height="46"/>
                                                 <state key="normal" title="Aluminum">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -524,7 +524,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-Q0-DSq">
-                                <rect key="frame" x="44" y="44" width="808" height="289"/>
+                                <rect key="frame" x="44" y="0.0" width="808" height="333"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zef-df-xI6">
                                     <size key="itemSize" width="123" height="111"/>
@@ -543,7 +543,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dBf-sd-upQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="123" height="111"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O8Z-We-VGX">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face" translatesAutoresizingMaskIntoConstraints="NO" id="O8Z-We-VGX">
                                                             <rect key="frame" x="0.0" y="0.0" width="123" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="90" id="ex4-ms-zWk"/>
@@ -583,7 +583,7 @@
                                             <outlet property="image" destination="O8Z-We-VGX" id="Hwm-zA-9Qw"/>
                                             <outlet property="name" destination="TUE-ct-06f" id="0lv-rv-e64"/>
                                             <outlet property="timeLabel" destination="vTc-Cd-Mwo" id="FJk-KT-uft"/>
-                                            <segue destination="dfG-gc-jhT" kind="show" id="ADY-CY-SVp"/>
+                                            <segue destination="dfG-gc-jhT" kind="show" identifier="updateCustomer" id="ADY-CY-SVp"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -688,9 +688,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ybE-0p-TwG"/>
-        <segue reference="MPw-8j-Oxa"/>
+        <segue reference="ADY-CY-SVp"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="face" width="1024" height="575"/>
         <image name="pic" width="498" height="59"/>
     </resources>
 </document>

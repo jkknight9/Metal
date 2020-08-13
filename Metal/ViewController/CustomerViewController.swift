@@ -35,4 +35,17 @@ class CustomerViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBAction func goHomeButtonTapped(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "updateCustomer" {
+            guard let destinationVC = segue.destination as? ViewController else {return}
+            if let cell = sender as? CustomerCollectionViewCell {
+                if let indexPath = collectionView.indexPath(for: cell) {
+                    let customer = CustomerController.shared.currentCustomers[indexPath.row]
+                    destinationVC.currentCustomer = customer
+                    
+                }
+            }
+        }
+    }
 }

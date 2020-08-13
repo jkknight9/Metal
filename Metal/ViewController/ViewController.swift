@@ -38,24 +38,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         if self.currentCustomer == nil {
-        let ac = UIAlertController(title: nil, message: "Enter Name:", preferredStyle: .alert)
-        let vc = UIImagePickerController()
-//        vc.sourceType = .camera
-//        vc.cameraDevice = .front
-//        vc.delegate = self
-//        vc.takePicture()
-        let okayAction = UIAlertAction(title: "Okay", style: .default){
-        [weak ac] _ in
-        guard let name = ac?.textFields?[0].text else {return}
-        let upperName = name.uppercased()
-        let date = Date()
-            self.currentCustomer = Customer(uuid: UUID().uuidString, title: upperName, image: UIImage(named: "pic"), receipt: [], payment: 0.00, isCurrent: true, timeStamp: date)
-        }
-        ac.addTextField { (textField) in
-        textField.placeholder = "Name"
-        ac.addAction(okayAction)
-        }
-        self.present(ac, animated: true, completion: nil)
+            let ac = UIAlertController(title: nil, message: "Enter Name:", preferredStyle: .alert)
+            //            let vc = UIImagePickerController()
+            //        vc.sourceType = .camera
+            //        vc.cameraDevice = .front
+            //        vc.delegate = self
+            //        vc.takePicture()
+            let okayAction = UIAlertAction(title: "Okay", style: .default){
+                [weak ac] _ in
+                guard let name = ac?.textFields?[0].text else {return}
+                let upperName = name.uppercased()
+                let date = Date()
+                self.currentCustomer = Customer(uuid: UUID().uuidString, title: upperName, image: UIImage(named: "face"), receipt: [], payment: 0.00, isCurrent: true, timeStamp: date)
+            }
+            ac.addTextField { (textField) in
+                textField.placeholder = "Name"
+                ac.addAction(okayAction)
+            }
+            self.present(ac, animated: true, completion: nil)
         }
     }
     
@@ -93,16 +93,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         let ac = UIAlertController(title: "Weight?", message: nil, preferredStyle: .alert)
-        
         let action = UIAlertAction(title: "Submit", style: .default){
             [weak self, weak ac] _ in
             guard let weight = Float((ac?.textFields?[0].text)!) else {return}
             for n in MetalController.shared.allMetals.indices {
-                    if sender.tag == n {
-                        let metalToBeAdded = Metal(name: MetalController.shared.allMetals[n].name, price: MetalController.shared.allMetals[n].price, weight: weight)
-                        self?.submit(metalToBeAdded)
-                    }
+                if sender.tag == n {
+                    let metalToBeAdded = Metal(name: MetalController.shared.allMetals[n].name, price: MetalController.shared.allMetals[n].price, weight: weight)
+                    self?.submit(metalToBeAdded)
                 }
+            }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in}
         ac.addTextField { (textField) in
@@ -120,7 +119,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         updateTotal()
-        
         return
         
     }
@@ -152,23 +150,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         totalLabel.text = "Cost: \(formatter)"
     }
     
-@IBAction func holdTicketButtonTapped(_ sender: UIButton) {
+    @IBAction func holdTicketButtonTapped(_ sender: UIButton) {
         if let customer = currentCustomer {
-            CustomerController.shared.addCustomerToHeld(customer: customer)
-            
+            CustomerController.shared.updateCustomer(customer)
         }
     }
-    
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "currentCustomers"  {
-    //            let currentCustomer = customer
-    //            guard let destinationVC = segue.destination as? CustomerViewController else {return}
-    //
-    //
-    //
-    //            }
-    //        }
 }
 
 
