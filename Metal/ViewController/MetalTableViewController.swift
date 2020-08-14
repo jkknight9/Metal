@@ -38,7 +38,10 @@ class MetalTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let ac = UIAlertController(title: "Update Price", message: nil, preferredStyle: .alert)
-        ac.addTextField()
+        ac.addTextField { (textfield) in
+            textfield.placeholder = "Price"
+            textfield.keyboardType = .decimalPad
+        }
         ac.addAction((UIAlertAction(title: "Update", style: .default, handler: { (action) in
             guard let price = ac.textFields?[0].text else {return}
             let priceAsFloat = (price as NSString).floatValue

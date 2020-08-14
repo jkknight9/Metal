@@ -50,6 +50,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let upperName = name.uppercased()
                 let date = Date()
                 self.currentCustomer = Customer(uuid: UUID().uuidString, title: upperName, image: UIImage(named: "face"), receipt: [], payment: 0.00, isCurrent: true, timeStamp: date)
+                self.title = upperName
             }
             ac.addTextField { (textField) in
                 textField.placeholder = "Name"
@@ -106,7 +107,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in}
         ac.addTextField { (textField) in
             textField.placeholder = "Pounds"
-            textField.keyboardType = UIKeyboardType.numberPad
+            textField.keyboardType = .decimalPad
             
             ac.addAction(action)
             ac.addAction(cancelAction)
@@ -141,6 +142,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             updateTotal()
             
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ac = UIAlertController(title: "Tare Weight", message: "Enter Tare Amount", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Submit", style: .default){
+            [weak self, weak ac] _ in
+            guard let weight = Float((ac?.textFields?[0].text)!) else {return}
+            let newWeight = (self?.currentCustomer?.receipt[indexPath.row].weight)! - weight
+            self?.currentCustomer?.receipt[indexPath.row].weight = newWeight
+            self?.updateTotal()
+            tableView.reloadData()
+            
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in}
+        ac.addTextField { (textField) in
+            textField.placeholder = "Pounds"
+            textField.keyboardType = .decimalPad
+            ac.addAction(action)
+            ac.addAction(cancelAction)
+            self.present(ac,animated: true)
+    }
     }
     
     func updateTotal() {

@@ -42,6 +42,7 @@ class CustomerViewController: UIViewController, UICollectionViewDelegate, UIColl
             if let cell = sender as? CustomerCollectionViewCell {
                 if let indexPath = collectionView.indexPath(for: cell) {
                     let customer = CustomerController.shared.currentCustomers[indexPath.row]
+                    destinationVC.title = customer.title
                     destinationVC.currentCustomer = customer
                     
                 }

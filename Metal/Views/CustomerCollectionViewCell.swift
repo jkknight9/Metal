@@ -25,6 +25,7 @@ class CustomerCollectionViewCell: UICollectionViewCell {
         cell.layer.borderWidth = 1
         if let timeStamp = customer.timeStamp {
             let formatter = DateFormatter()
+            formatter.dateStyle = .short
             formatter.timeStyle = .short
             let formattedTime = formatter.string(from: timeStamp)
             self.timeLabel.text = formattedTime
