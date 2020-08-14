@@ -178,6 +178,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             CustomerController.shared.updateCustomer(customer)
         }
     }
+    
+    @IBAction func closeTicketButtonTapped(_ sender: UIButton) {
+        if let customer = currentCustomer {
+            CustomerController.shared.closedCustomers.append(customer)
+            CustomerController.shared.deleteCustomer(customer: customer)
+        }
+    }
 }
 
 

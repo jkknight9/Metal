@@ -18,6 +18,7 @@ class CustomerViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.delegate = self
         collectionView.dataSource = self
 
+
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return CustomerController.shared.currentCustomers.count

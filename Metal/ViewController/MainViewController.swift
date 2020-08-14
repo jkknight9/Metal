@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate & UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         MetalController.shared.addMetal(name: "Metal", price: 0.35)
         MetalController.shared.addMetal(name: "Car Battery", price: 5.00)
         MetalController.shared.addMetal(name: "Batteries", price: 0.15)
@@ -28,9 +29,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate & UI
         
     }
     
-    @IBAction func quickTicket(_ sender: Any) {
-            
-    }
 
     /*
      // MARK: - Navigation

@@ -13,15 +13,10 @@ class CustomerController {
    
     
     var currentCustomers: [Customer] = []
+    var closedCustomers: [Customer] = []
     
     
     static let shared = CustomerController()
-    
-//    func newCustomer(uuid: String, title: String, image: UIImage, receipt: [Metal] = []) {
-//        let newCustomer = Customer(uuid: uuid, title: title, image: image, receipt: receipt)
-//        currentCustomers.append(newCustomer)
-//
-//    }
     
     func addCustomerToHeld(customer: Customer) {
         currentCustomers.append(customer)

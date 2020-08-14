@@ -98,7 +98,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Quick Ticket"/>
                                                 <connections>
-                                                    <action selector="quickTicket:" destination="3b1-6Z-j39" eventType="touchUpInside" id="oIQ-6L-V9f"/>
                                                     <segue destination="dfG-gc-jhT" kind="show" id="MPw-8j-Oxa"/>
                                                 </connections>
                                             </button>
@@ -117,7 +116,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="q2P-jc-Azb">
-                                <rect key="frame" x="199" y="94" width="498" height="59"/>
+                                <rect key="frame" x="199" y="50" width="498" height="59"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -227,6 +226,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-7t-Hga">
                                                 <rect key="frame" x="136.5" y="0.0" width="137" height="30"/>
                                                 <state key="normal" title="Close Ticket"/>
+                                                <connections>
+                                                    <action selector="closeTicketButtonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="enE-ax-RPJ"/>
+                                                    <segue destination="3b1-6Z-j39" kind="show" id="fGh-Q3-rP7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsu-Ms-Ypu">
                                                 <rect key="frame" x="273.5" y="0.0" width="136.5" height="30"/>
@@ -626,21 +629,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xia-TC-Kkp">
-                                <rect key="frame" x="337" y="44" width="559" height="349"/>
+                                <rect key="frame" x="337" y="0.0" width="559" height="393"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="3IU-x2-o7h">
-                                        <rect key="frame" x="0.0" y="28" width="559" height="86"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customerCell" rowHeight="72" id="3IU-x2-o7h" customClass="ClosedTableViewCell" customModule="Metal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="559" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3IU-x2-o7h" id="Ndu-nK-aL6">
-                                            <rect key="frame" x="0.0" y="0.0" width="515" height="86"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="515" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="6vC-3D-38U">
+                                                    <rect key="frame" x="0.0" y="0.0" width="88" height="72"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="edE-yR-gfg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="88" height="72"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="namelLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4m-MS-l1B">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="88" height="32"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPu-nx-EN8">
+                                                                    <rect key="frame" x="0.0" y="40" width="88" height="32"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="paymentLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGH-Il-7Lz">
+                                                    <rect key="frame" x="406.5" y="0.0" width="108.5" height="72"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="WGH-Il-7Lz" secondAttribute="trailing" id="Cqw-2C-Hai"/>
+                                                <constraint firstItem="6vC-3D-38U" firstAttribute="leading" secondItem="Ndu-nK-aL6" secondAttribute="leading" id="M2x-3k-ENG"/>
+                                                <constraint firstAttribute="bottom" secondItem="6vC-3D-38U" secondAttribute="bottom" id="bhT-IK-9Gi"/>
+                                                <constraint firstItem="WGH-Il-7Lz" firstAttribute="top" secondItem="Ndu-nK-aL6" secondAttribute="top" id="e9o-8O-aDx"/>
+                                                <constraint firstItem="6vC-3D-38U" firstAttribute="top" secondItem="Ndu-nK-aL6" secondAttribute="top" id="gdf-Si-i8b"/>
+                                                <constraint firstAttribute="bottom" secondItem="WGH-Il-7Lz" secondAttribute="bottom" id="tWT-Qe-2IU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="QPu-nx-EN8" id="mw8-cC-Rlr"/>
+                                            <outlet property="nameLabel" destination="j4m-MS-l1B" id="3Nq-kx-2rV"/>
+                                            <outlet property="paymentLabel" destination="WGH-Il-7Lz" id="FRb-A4-gT8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lly-6z-KK3">
-                                <rect key="frame" x="44" y="44" width="293" height="349"/>
+                                <rect key="frame" x="44" y="0.0" width="293" height="393"/>
+                                <connections>
+                                    <action selector="datePicker:" destination="V2k-4e-fog" eventType="valueChanged" id="RgV-Th-coJ"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -663,6 +712,13 @@
                         <outlet property="tableView" destination="Xia-TC-Kkp" id="DOx-7l-LJt"/>
                     </connections>
                 </viewController>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B58-Cy-Ne5">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JT2-pn-Qz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3041.5178571428569" y="-779.71014492753625"/>
@@ -687,8 +743,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ybE-0p-TwG"/>
-        <segue reference="ADY-CY-SVp"/>
+        <segue reference="WLY-kM-whQ"/>
+        <segue reference="MPw-8j-Oxa"/>
+        <segue reference="fGh-Q3-rP7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="face" width="1024" height="575"/>
