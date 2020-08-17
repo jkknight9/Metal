@@ -15,7 +15,7 @@ class ClosedTicketsViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
     
-    var closedCustomer: Customer?
+    var paidCustomer: Customer?
     
     
     override func viewDidLoad() {
@@ -23,35 +23,43 @@ class ClosedTicketsViewController: UIViewController, UITableViewDataSource, UITa
         tableView.dataSource = self
         tableView.delegate = self
         datePicker.datePickerMode = .date
+        CustomerController.shared.paidCustomers.reverse()
+        todaysPayOut()
         
         
     }
     
     @IBAction func datePicker(_ sender: UIDatePicker) {
-        getClosedCustomers()
+        getPaidCustomers()
         tableView.reloadData()
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CustomerController.shared.closedCustomers.count
+        return CustomerController.shared.paidCustomers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell", for: indexPath) as? ClosedTableViewCell else {return UITableViewCell()}
-        let customer = CustomerController.shared.closedCustomers[indexPath.row]
+        let customer = CustomerController.shared.paidCustomers[indexPath.row]
         cell.closedCustomer = customer
         return cell
     }
     
-    func getClosedCustomers() {
+    func getPaidCustomers() {
         for i in CustomerController.shared.closedCustomers.indices {
-            if datePicker.date == CustomerController.shared.closedCustomers[i].timeStamp {
-                CustomerController.shared.closedCustomers.reverse()
-            }
+            if datePicker.date == CustomerController.shared.paidCustomers[i].timeStamp {
+                CustomerController.shared.paidCustomers.reverse()
             }
         }
     }
+    func todaysPayOut() {
+        let total = CustomerController.shared.paidCustomers.map{$0.payment}.reduce(0,+)
+        print(total)
+        let formatter = String(format: "$%.2f", total)
+        title = "Today's payout total = -\(formatter)"
+    }
+}
 
 /*
  // MARK: - Navigation

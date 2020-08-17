@@ -79,14 +79,14 @@
                                                 <rect key="frame" x="128" y="0.0" width="109" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="View Closed"/>
-                                                <connections>
-                                                    <segue destination="V2k-4e-fog" kind="show" id="dDe-kC-IET"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27h-sp-COe">
                                                 <rect key="frame" x="277" y="0.0" width="85" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="View Paid"/>
+                                                <connections>
+                                                    <segue destination="V2k-4e-fog" kind="show" id="sCf-hK-F4i"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -212,41 +212,55 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="w6g-bW-Y2H">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w6g-bW-Y2H">
                                         <rect key="frame" x="0.0" y="308" width="410" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN8-Hz-fP7">
-                                                <rect key="frame" x="0.0" y="0.0" width="136.5" height="30"/>
-                                                <state key="normal" title="Hold Ticket"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                <state key="normal" title="Hold Ticket">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
+                                                    <action selector="closedTicketButtonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="Ihp-A1-PH3"/>
                                                     <action selector="holdTicketButtonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="VfY-29-VeP"/>
                                                     <segue destination="vGe-i6-axz" kind="show" identifier="currentCustomers" id="ybE-0p-TwG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-7t-Hga">
-                                                <rect key="frame" x="136.5" y="0.0" width="137" height="30"/>
-                                                <state key="normal" title="Close Ticket"/>
+                                                <rect key="frame" x="140" y="0.0" width="130" height="30"/>
+                                                <state key="normal" title="Close Ticket">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="closeTicketButtonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="enE-ax-RPJ"/>
                                                     <segue destination="3b1-6Z-j39" kind="show" id="fGh-Q3-rP7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsu-Ms-Ypu">
-                                                <rect key="frame" x="273.5" y="0.0" width="136.5" height="30"/>
-                                                <state key="normal" title="Pay Ticket"/>
+                                                <rect key="frame" x="280" y="0.0" width="130" height="30"/>
+                                                <state key="normal" title="Pay Ticket">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="payTicketButtonTapped:" destination="dfG-gc-jhT" eventType="touchUpInside" id="L33-Ic-3sM"/>
+                                                    <segue destination="3b1-6Z-j39" kind="show" id="G6D-4U-3lB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oa8-Lt-Ce5">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oa8-Lt-Ce5">
                                         <rect key="frame" x="0.0" y="343" width="410" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFn-GP-GPL">
-                                                <rect key="frame" x="0.0" y="0.0" width="205" height="30"/>
-                                                <state key="normal" title="Close Wgt Only"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                                <state key="normal" title="Close Wgt Only">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2l-RZ-sTG">
-                                                <rect key="frame" x="205" y="0.0" width="205" height="30"/>
-                                                <state key="normal" title="Void Ticket"/>
+                                                <rect key="frame" x="210" y="0.0" width="200" height="30"/>
+                                                <state key="normal" title="Void Ticket">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -510,8 +524,13 @@
                         <outlet property="button7" destination="mJe-Lo-W3D" id="s65-co-P49"/>
                         <outlet property="button8" destination="1Bh-QV-RJY" id="3qG-wd-ntF"/>
                         <outlet property="button9" destination="lD1-M4-vJz" id="3z5-ea-OIN"/>
+                        <outlet property="closeTicket" destination="tBG-7t-Hga" id="asF-hx-DT3"/>
+                        <outlet property="closeWeightOnly" destination="UFn-GP-GPL" id="CWj-ye-6xn"/>
+                        <outlet property="holdTicket" destination="eN8-Hz-fP7" id="2Sm-rg-fBS"/>
+                        <outlet property="payTicket" destination="Hsu-Ms-Ypu" id="me3-zl-y1C"/>
                         <outlet property="tableView" destination="eoO-nq-4KL" id="kzr-K0-Y0m"/>
                         <outlet property="totalLabel" destination="a5J-0E-hds" id="d5D-AE-w59"/>
+                        <outlet property="voidTicket" destination="z2l-RZ-sTG" id="Aby-DO-N04"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qF-Mv-Gje" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -743,7 +762,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WLY-kM-whQ"/>
+        <segue reference="ybE-0p-TwG"/>
         <segue reference="MPw-8j-Oxa"/>
         <segue reference="fGh-Q3-rP7"/>
     </inferredMetricsTieBreakers>

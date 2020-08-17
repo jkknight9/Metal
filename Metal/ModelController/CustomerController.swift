@@ -13,6 +13,7 @@ class CustomerController {
    
     
     var currentCustomers: [Customer] = []
+    var paidCustomers: [Customer] = []
     var closedCustomers: [Customer] = []
     
     

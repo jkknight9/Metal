@@ -33,17 +33,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var button20: UIButton!
     @IBOutlet weak var button21: UIButton!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var holdTicket: UIButton!
+    @IBOutlet weak var closeTicket: UIButton!
+    @IBOutlet weak var payTicket: UIButton!
+    @IBOutlet weak var closeWeightOnly: UIButton!
+    @IBOutlet weak var voidTicket: UIButton!
+    
+    
+    
     
     var currentCustomer: Customer?
+    let vc = UIImagePickerController()
+    
     
     override func viewDidAppear(_ animated: Bool) {
         if self.currentCustomer == nil {
             let ac = UIAlertController(title: nil, message: "Enter Name:", preferredStyle: .alert)
-            //            let vc = UIImagePickerController()
-            //        vc.sourceType = .camera
-            //        vc.cameraDevice = .front
-            //        vc.delegate = self
-            //        vc.takePicture()
+            self.vc.sourceType = .camera
+            self.vc.cameraDevice = .front
+            self.vc.delegate = self
+            self.vc.showsCameraControls = false
+            self.vc.takePicture()
+            
+            
             let okayAction = UIAlertAction(title: "Okay", style: .default){
                 [weak ac] _ in
                 guard let name = ac?.textFields?[0].text else {return}
@@ -57,6 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 ac.addAction(okayAction)
             }
             self.present(ac, animated: true, completion: nil)
+            
         }
     }
     
@@ -88,9 +101,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         button21.layer.borderWidth = 1
         tableView.layer.borderWidth = 1
         totalLabel.layer.borderWidth = 1
+        holdTicket.backgroundColor = .cyan
+        holdTicket.layer.borderWidth = 1
+        closeTicket.backgroundColor = .cyan
+        closeTicket.layer.borderWidth = 1
+        payTicket.backgroundColor = .cyan
+        payTicket.layer.borderWidth = 1
+        closeWeightOnly.backgroundColor = .cyan
+        closeWeightOnly.layer.borderWidth = 1
+        voidTicket.backgroundColor = .cyan
+        voidTicket.layer.borderWidth = 1
         updateTotal()
         
     }
+    //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    //        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
+    //            currentCustomer?.image = selectedImage
+    //            print(selectedImage)
+    //            print(currentCustomer?.image)
+    //        }
+    //                dismiss(animated: true, completion: nil)
+    //            }
+    //            func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    //                dismiss(animated: false, completion: nil)
+    //    }
+    //         Controller Delegate protocol functions end here
+    
+    
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         let ac = UIAlertController(title: "Weight?", message: nil, preferredStyle: .alert)
@@ -163,7 +200,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             ac.addAction(action)
             ac.addAction(cancelAction)
             self.present(ac,animated: true)
-    }
+        }
     }
     
     func updateTotal() {
@@ -179,13 +216,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    @IBAction func closeTicketButtonTapped(_ sender: UIButton) {
+    
+    @IBAction func payTicketButtonTapped(_ sender: Any) {
         if let customer = currentCustomer {
-            CustomerController.shared.closedCustomers.append(customer)
+            CustomerController.shared.paidCustomers.append(customer)
             CustomerController.shared.deleteCustomer(customer: customer)
         }
     }
+    
+    @IBAction func closedTicketButtonTapped(_ sender: Any) {
+        if let customer = currentCustomer {
+                   CustomerController.shared.closedCustomers.append(customer)
+                   CustomerController.shared.deleteCustomer(customer: customer)
+               }
+    }
 }
+
 
 
 

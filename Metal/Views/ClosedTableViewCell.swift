@@ -36,7 +36,8 @@ class ClosedTableViewCell: UITableViewCell {
             let formattedTime = formatter.string(from: timeStamp)
             self.dateLabel.text = formattedTime
         }
-        self.paymentLabel.text = "$\(customer.payment)"
+        let formatter = String(format: "$%.2f", customer.payment)
+        self.paymentLabel.text = "\(formatter)"
         
     }
 
