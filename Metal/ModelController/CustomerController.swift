@@ -36,8 +36,6 @@ class CustomerController {
     func close(_ customer: Customer) {
         customer.isCurrent = false
     }
-
-    
     func deleteCustomer(customer: Customer){
         if let removeCustomer = currentCustomers.firstIndex(of: customer) {
             currentCustomers.remove(at: removeCustomer)

@@ -150,6 +150,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             ac.addAction(cancelAction)
             self.present(ac,animated: true)
         }
+        
     }
     
     func submit(_ metal: Metal) {
@@ -158,7 +159,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.insertRows(at: [indexPath], with: .automatic)
         updateTotal()
         return
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  currentCustomer?.receipt.count ?? 0
@@ -219,6 +219,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func payTicketButtonTapped(_ sender: Any) {
         if let customer = currentCustomer {
+            CashboxController.shared.subtract(customer.receipt.map{$0.price * $0.weight}.reduce(0,+))
+            print(CashboxController.shared.cash)
             CustomerController.shared.paidCustomers.append(customer)
             CustomerController.shared.deleteCustomer(customer: customer)
         }
@@ -228,6 +230,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let customer = currentCustomer {
                    CustomerController.shared.closedCustomers.append(customer)
                    CustomerController.shared.deleteCustomer(customer: customer)
+            
                }
     }
 }

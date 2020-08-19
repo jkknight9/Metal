@@ -18,6 +18,8 @@
 		E9103ED524D4712500039716 /* MetalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103ED424D4712500039716 /* MetalController.swift */; };
 		E9103ED724D4771A00039716 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103ED624D4771A00039716 /* TableViewCell.swift */; };
 		E935370724E724C20065AEFE /* ClosedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935370624E724C20065AEFE /* ClosedTableViewCell.swift */; };
+		E935370924ECD8640065AEFE /* Cashbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935370824ECD8640065AEFE /* Cashbox.swift */; };
+		E935370B24ECDB8A0065AEFE /* CachboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935370A24ECDB8A0065AEFE /* CachboxController.swift */; };
 		E991E18624DB7500008F9E68 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E18524DB7500008F9E68 /* Customer.swift */; };
 		E991E18724DB752C008F9E68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9103EA424D461F700039716 /* SceneDelegate.swift */; };
 		E991E18924DB771E008F9E68 /* CustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991E18824DB771E008F9E68 /* CustomerController.swift */; };
@@ -64,6 +66,8 @@
 		E9103ED424D4712500039716 /* MetalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalController.swift; sourceTree = "<group>"; };
 		E9103ED624D4771A00039716 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E935370624E724C20065AEFE /* ClosedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedTableViewCell.swift; sourceTree = "<group>"; };
+		E935370824ECD8640065AEFE /* Cashbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashbox.swift; sourceTree = "<group>"; };
+		E935370A24ECDB8A0065AEFE /* CachboxController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachboxController.swift; sourceTree = "<group>"; };
 		E991E18524DB7500008F9E68 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		E991E18824DB771E008F9E68 /* CustomerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerController.swift; sourceTree = "<group>"; };
 		E991E18A24DB83AE008F9E68 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E9103ED224D4633900039716 /* Metal.swift */,
+				E935370824ECD8640065AEFE /* Cashbox.swift */,
 				E991E18524DB7500008F9E68 /* Customer.swift */,
 			);
 			path = Model;
@@ -185,6 +190,7 @@
 			children = (
 				E9103ED424D4712500039716 /* MetalController.swift */,
 				E991E18824DB771E008F9E68 /* CustomerController.swift */,
+				E935370A24ECDB8A0065AEFE /* CachboxController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -345,6 +351,8 @@
 				E991E18624DB7500008F9E68 /* Customer.swift in Sources */,
 				E9E102D024E4744000965CA6 /* MetalTableViewController.swift in Sources */,
 				E9103ED724D4771A00039716 /* TableViewCell.swift in Sources */,
+				E935370924ECD8640065AEFE /* Cashbox.swift in Sources */,
+				E935370B24ECDB8A0065AEFE /* CachboxController.swift in Sources */,
 				E9103ED524D4712500039716 /* MetalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
